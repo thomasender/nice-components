@@ -1,0 +1,18 @@
+@layer nc.components {
+  .nc-confirm__body {
+    color: var(--nc-color-text-muted);
+    line-height: var(--nc-line-height);
+  }
+
+  .nc-confirm__reason {
+    margin-block-start: var(--nc-space-4);
+  }
+
+  .nc-confirm__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--nc-space-2);
+    margin-block-start: var(--nc-space-6);
+  }
+}

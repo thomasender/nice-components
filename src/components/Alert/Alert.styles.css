@@ -1,0 +1,86 @@
+@layer nc.components {
+  .nc-alert {
+    --_bg: var(--nc-color-info-bg);
+    --_fg: var(--nc-color-info-fg);
+    --_border: var(--nc-color-info-border);
+
+    display: flex;
+    align-items: flex-start;
+    gap: var(--nc-space-3);
+    box-sizing: border-box;
+    padding: var(--nc-space-3) var(--nc-space-4);
+    border: 1px solid var(--_border);
+    border-radius: var(--nc-alert-radius, var(--nc-radius-md));
+    background: var(--_bg);
+    color: var(--_fg);
+    font-family: var(--nc-font-family);
+    font-size: var(--nc-font-size-md);
+    line-height: var(--nc-line-height);
+  }
+
+  .nc-alert[data-variant='success'] {
+    --_bg: var(--nc-color-success-bg);
+    --_fg: var(--nc-color-success-fg);
+    --_border: var(--nc-color-success-border);
+  }
+
+  .nc-alert[data-variant='warning'] {
+    --_bg: var(--nc-color-warning-bg);
+    --_fg: var(--nc-color-warning-fg);
+    --_border: var(--nc-color-warning-border);
+  }
+
+  .nc-alert[data-variant='danger'] {
+    --_bg: var(--nc-color-danger-bg);
+    --_fg: var(--nc-color-danger-fg);
+    --_border: var(--nc-color-danger-border);
+  }
+
+  .nc-alert__icon {
+    flex: none;
+    margin-block-start: 0.1rem;
+  }
+
+  .nc-alert__content {
+    flex: 1;
+    min-inline-size: 0;
+  }
+
+  .nc-alert__title {
+    margin: 0;
+    font-weight: var(--nc-font-weight-bold);
+  }
+
+  .nc-alert__body {
+    margin-block-start: var(--nc-space-1);
+  }
+
+  .nc-alert__title + .nc-alert__body {
+    margin-block-start: var(--nc-space-1);
+  }
+
+  .nc-alert__dismiss {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2rem;
+    block-size: 2rem;
+    margin: -0.25rem -0.5rem -0.25rem 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--nc-radius-sm);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .nc-alert__dismiss[data-hovered] {
+    background: color-mix(in srgb, currentColor 12%, transparent);
+  }
+
+  .nc-alert__dismiss[data-focus-visible] {
+    outline: var(--nc-focus-ring-width) solid currentColor;
+    outline-offset: 1px;
+  }
+}

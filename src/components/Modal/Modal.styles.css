@@ -1,0 +1,87 @@
+@layer nc.components {
+  .nc-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--nc-z-modal, 1000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--nc-space-4);
+    background: var(--nc-color-overlay);
+    animation: nc-fade-in var(--nc-duration) ease-out;
+  }
+
+  .nc-modal {
+    box-sizing: border-box;
+    inline-size: 100%;
+    max-inline-size: var(--nc-modal-width, 32rem);
+    max-block-size: 100%;
+    overflow: auto;
+    border-radius: var(--nc-radius-lg);
+    background: var(--nc-color-bg);
+    color: var(--nc-color-text);
+    box-shadow: var(--nc-shadow-lg);
+    font-family: var(--nc-font-family);
+  }
+
+  .nc-modal[data-size='sm'] {
+    max-inline-size: var(--nc-modal-width, 24rem);
+  }
+
+  .nc-modal[data-size='lg'] {
+    max-inline-size: var(--nc-modal-width, 44rem);
+  }
+
+  .nc-dialog {
+    position: relative;
+    padding: var(--nc-space-6);
+    outline: none;
+  }
+
+  .nc-dialog__title {
+    margin: 0 0 var(--nc-space-3);
+    padding-inline-end: var(--nc-space-8, 2rem);
+    font-size: var(--nc-font-size-lg);
+    font-weight: var(--nc-font-weight-bold);
+    line-height: var(--nc-line-height);
+  }
+
+  .nc-dialog__close {
+    position: absolute;
+    inset-block-start: var(--nc-space-2);
+    inset-inline-end: var(--nc-space-2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--nc-min-target-size);
+    block-size: var(--nc-min-target-size);
+    padding: 0;
+    border: 0;
+    border-radius: var(--nc-radius-md);
+    background: transparent;
+    color: var(--nc-color-text-muted);
+    cursor: pointer;
+  }
+
+  .nc-dialog__close[data-hovered] {
+    background: var(--nc-color-bg-hover);
+    color: var(--nc-color-text);
+  }
+
+  .nc-dialog__close[data-focus-visible] {
+    outline: var(--nc-focus-ring-width) solid var(--nc-color-focus-ring);
+    outline-offset: calc(var(--nc-focus-ring-width) * -1);
+  }
+
+  @keyframes nc-fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nc-modal-overlay {
+      animation: none;
+    }
+  }
+}
