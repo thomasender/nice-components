@@ -1,0 +1,119 @@
+{
+  "name": "@thomasender/nice-components",
+  "version": "0.0.0",
+  "description": "Accessible, themeable React component library built on React Aria and plain CSS variables.",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "accessibility",
+    "a11y",
+    "react-aria",
+    "design-tokens"
+  ],
+  "license": "MIT",
+  "author": "Thomas Ender",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasender/nice-components.git"
+  },
+  "homepage": "https://github.com/thomasender/nice-components#readme",
+  "bugs": "https://github.com/thomasender/nice-components/issues",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "rm -rf dist && vite build && tsc -p tsconfig.build.json && node scripts/strip-css-imports.mjs && cp src/styles/tokens.css dist/tokens.css",
+    "storybook:build": "storybook build -o storybook-static",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "style": "prettier --check .",
+    "style:fix": "prettier --write .",
+    "types": "tsc --noEmit",
+    "check:package": "publint && attw --pack . --profile esm-only --exclude-entrypoints ./styles.css ./tokens.css ./package.json",
+    "check": "npm run lint && npm run style && npm run types && npm run test && npm run build && npm run check:package",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "npm run build && changeset publish",
+    "prepare": "husky || true"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md,yml}": [
+      "prettier --write"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "react-aria-components": "^1.22.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-docs": "^10.6.7",
+    "@storybook/react-vite": "^10.6.7",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.10",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitest/coverage-v8": "^5.1.0",
+    "axe-core": "^4.14.0",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "happy-dom": "^21.0.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.10.1",
+    "publint": "^0.3.25",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "storybook": "^10.6.7",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
+    "vitest-axe": "^0.1.0"
+  }
+}

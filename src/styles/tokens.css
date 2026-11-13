@@ -1,0 +1,81 @@
+/*
+ * nice-components design tokens.
+ *
+ * Everything is a CSS custom property prefixed `--nc-`, declared inside the
+ * `nc.tokens` cascade layer. Layers lose against un-layered CSS, so an app can
+ * override any token with a plain `:root { --nc-color-primary: ... }` rule —
+ * no specificity tricks, no !important.
+ *
+ * Dark mode: set `data-theme="dark"` on <html> (or any ancestor).
+ */
+@layer nc.tokens, nc.components;
+
+@layer nc.tokens {
+  :root {
+    /* Color — brand */
+    --nc-color-primary: #4338ca; /* 8.6:1 on white */
+    --nc-color-primary-hover: #3730a3;
+    --nc-color-on-primary: #ffffff;
+    --nc-color-danger: #b91c1c; /* 6.5:1 on white */
+    --nc-color-danger-hover: #991b1b;
+    --nc-color-on-danger: #ffffff;
+
+    /* Color — surfaces & text */
+    --nc-color-bg: #ffffff;
+    --nc-color-bg-subtle: #f4f4f5;
+    --nc-color-bg-hover: #e4e4e7;
+    --nc-color-text: #18181b;
+    --nc-color-text-muted: #52525b; /* 7.7:1 on white */
+    --nc-color-border: #a1a1aa;
+    --nc-color-focus-ring: #4338ca;
+    --nc-color-disabled-bg: #e4e4e7;
+    --nc-color-disabled-text: #71717a;
+
+    /* Typography */
+    --nc-font-family:
+      system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --nc-font-size-sm: 0.875rem;
+    --nc-font-size-md: 1rem;
+    --nc-font-size-lg: 1.125rem;
+    --nc-font-weight-medium: 500;
+    --nc-font-weight-bold: 600;
+    --nc-line-height: 1.4;
+
+    /* Space (4px base) */
+    --nc-space-1: 0.25rem;
+    --nc-space-2: 0.5rem;
+    --nc-space-3: 0.75rem;
+    --nc-space-4: 1rem;
+    --nc-space-5: 1.25rem;
+    --nc-space-6: 1.5rem;
+
+    /* Shape & motion */
+    --nc-radius-sm: 0.25rem;
+    --nc-radius-md: 0.5rem;
+    --nc-radius-lg: 0.75rem;
+    --nc-focus-ring-width: 2px;
+    --nc-focus-ring-offset: 2px;
+    --nc-duration: 120ms;
+    --nc-min-target-size: 2.75rem; /* 44px touch target (WCAG 2.5.5) */
+  }
+
+  :root[data-theme='dark'],
+  [data-theme='dark'] {
+    --nc-color-primary: #a5b4fc;
+    --nc-color-primary-hover: #c7d2fe;
+    --nc-color-on-primary: #1e1b4b;
+    --nc-color-danger: #fca5a5;
+    --nc-color-danger-hover: #fecaca;
+    --nc-color-on-danger: #450a0a;
+
+    --nc-color-bg: #09090b;
+    --nc-color-bg-subtle: #18181b;
+    --nc-color-bg-hover: #27272a;
+    --nc-color-text: #fafafa;
+    --nc-color-text-muted: #a1a1aa;
+    --nc-color-border: #71717a;
+    --nc-color-focus-ring: #a5b4fc;
+    --nc-color-disabled-bg: #27272a;
+    --nc-color-disabled-text: #71717a;
+  }
+}
