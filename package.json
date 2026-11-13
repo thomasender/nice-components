@@ -1,6 +1,6 @@
 {
   "name": "@thomasender/nice-components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Accessible, themeable React component library built on React Aria and plain CSS variables.",
   "keywords": [
     "react",
