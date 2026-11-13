@@ -31,6 +31,22 @@
     --nc-color-disabled-bg: #e4e4e7;
     --nc-color-disabled-text: #71717a;
 
+    /* Color — status (bg / fg / border; each fg meets 4.5:1 on its bg) */
+    --nc-color-info-bg: #eff6ff;
+    --nc-color-info-fg: #1e40af;
+    --nc-color-info-border: #93c5fd;
+    --nc-color-success-bg: #f0fdf4;
+    --nc-color-success-fg: #166534;
+    --nc-color-success-border: #86efac;
+    --nc-color-warning-bg: #fffbeb;
+    --nc-color-warning-fg: #92400e;
+    --nc-color-warning-border: #fcd34d;
+    --nc-color-danger-bg: #fef2f2;
+    --nc-color-danger-fg: #991b1b;
+    --nc-color-danger-border: #fca5a5;
+    --nc-color-overlay: rgba(9, 9, 11, 0.55);
+    --nc-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.25);
+
     /* Typography */
     --nc-font-family:
       system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -77,5 +93,19 @@
     --nc-color-focus-ring: #a5b4fc;
     --nc-color-disabled-bg: #27272a;
     --nc-color-disabled-text: #71717a;
+
+    --nc-color-info-bg: #172554;
+    --nc-color-info-fg: #bfdbfe;
+    --nc-color-info-border: #1e40af;
+    --nc-color-success-bg: #052e16;
+    --nc-color-success-fg: #bbf7d0;
+    --nc-color-success-border: #166534;
+    --nc-color-warning-bg: #451a03;
+    --nc-color-warning-fg: #fde68a;
+    --nc-color-warning-border: #92400e;
+    --nc-color-danger-bg: #450a0a;
+    --nc-color-danger-fg: #fecaca;
+    --nc-color-danger-border: #991b1b;
+    --nc-color-overlay: rgba(0, 0, 0, 0.7);
   }
 }

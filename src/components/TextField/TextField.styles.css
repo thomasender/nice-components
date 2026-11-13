@@ -1,0 +1,86 @@
+@layer nc.components {
+  .nc-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nc-space-1);
+    font-family: var(--nc-font-family);
+    font-size: var(--nc-font-size-md);
+    color: var(--nc-color-text);
+  }
+
+  .nc-field__label {
+    font-size: var(--nc-font-size-sm);
+    font-weight: var(--nc-font-weight-medium);
+  }
+
+  .nc-field__required {
+    color: var(--nc-color-danger);
+  }
+
+  .nc-field__control {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-block-size: var(--nc-min-target-size);
+    border: 1px solid var(--nc-field-border-color, var(--nc-color-border));
+    border-radius: var(--nc-field-radius, var(--nc-radius-md));
+    background: var(--nc-color-bg);
+    transition: border-color var(--nc-duration);
+  }
+
+  .nc-field__control:focus-within {
+    outline: var(--nc-focus-ring-width) solid var(--nc-color-focus-ring);
+    outline-offset: 0;
+    border-color: var(--nc-color-focus-ring);
+  }
+
+  .nc-field[data-invalid] .nc-field__control {
+    border-color: var(--nc-color-danger);
+  }
+
+  .nc-field[data-disabled] .nc-field__control {
+    background: var(--nc-color-disabled-bg);
+    cursor: not-allowed;
+  }
+
+  .nc-field__input {
+    flex: 1;
+    min-inline-size: 0;
+    padding: var(--nc-space-2) var(--nc-space-3);
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: var(--nc-line-height);
+    outline: none;
+  }
+
+  textarea.nc-field__input {
+    resize: vertical;
+  }
+
+  .nc-field__input::placeholder {
+    color: var(--nc-color-text-muted);
+  }
+
+  .nc-field[data-disabled] .nc-field__input {
+    color: var(--nc-color-disabled-text);
+    cursor: not-allowed;
+  }
+
+  .nc-field__description {
+    font-size: var(--nc-font-size-sm);
+    color: var(--nc-color-text-muted);
+  }
+
+  .nc-field__error {
+    font-size: var(--nc-font-size-sm);
+    color: var(--nc-color-danger-fg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nc-field__control {
+      transition: none;
+    }
+  }
+}

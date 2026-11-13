@@ -1,0 +1,48 @@
+@layer nc.components {
+  .nc-avatar {
+    --_size: 2.5rem;
+
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    inline-size: var(--_size);
+    block-size: var(--_size);
+    overflow: hidden;
+    border-radius: var(--nc-avatar-radius, 50%);
+    background: var(--nc-color-bg-hover);
+    color: var(--nc-color-text);
+    font-family: var(--nc-font-family);
+    font-size: calc(var(--_size) * 0.4);
+    font-weight: var(--nc-font-weight-bold);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .nc-avatar[data-size='sm'] {
+    --_size: 1.75rem;
+  }
+
+  .nc-avatar[data-size='lg'] {
+    --_size: 3.5rem;
+  }
+
+  .nc-avatar[data-size='xl'] {
+    --_size: 5rem;
+  }
+
+  .nc-avatar__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .nc-avatar__fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}

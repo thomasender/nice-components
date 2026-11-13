@@ -54,9 +54,23 @@ Only the tokens without components: `@thomasender/nice-components/tokens.css`.
 
 ## Components
 
-| Component | Status |
-| --------- | ------ |
-| `Button`  | ✅     |
+| Component       | What it is                                                                |
+| --------------- | ------------------------------------------------------------------------- |
+| `Button`        | primary / secondary / ghost / danger, sizes, pending state                |
+| `TextField`     | input or textarea with label, description, validation message             |
+| `PasswordInput` | `TextField` with a show/hide toggle                                       |
+| `Modal`         | accessible dialog (focus trap, Escape, outside click); `DialogTrigger`    |
+| `ConfirmDialog` | `alertdialog` with confirm/cancel, danger style, pending, optional reason |
+| `Badge`         | static status / category label                                            |
+| `Alert`         | inline info / success / warning / danger message, dismissible             |
+| `Avatar`        | image with initials fallback, focal point and zoom                        |
+| `Chip`          | toggleable filter chip (`aria-pressed`)                                   |
+| `Spinner`       | indeterminate progress indicator                                          |
+| `Skeleton`      | loading placeholder                                                       |
+| `ErrorBoundary` | catches render errors, default or custom fallback                         |
+
+All user-visible default texts ("Show password", "Cancel", "Dismiss", …) are English and
+overridable via props, so apps can pass translations.
 
 See the [Storybook](https://thomasender.github.io/nice-components/) for live examples.
 

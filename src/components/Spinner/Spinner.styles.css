@@ -1,0 +1,38 @@
+@layer nc.components {
+  .nc-spinner {
+    --_size: 1.5rem;
+
+    display: inline-flex;
+    inline-size: var(--_size);
+    block-size: var(--_size);
+    flex: none;
+    color: inherit;
+  }
+
+  .nc-spinner[data-size='sm'] {
+    --_size: 1rem;
+  }
+
+  .nc-spinner[data-size='lg'] {
+    --_size: 2.5rem;
+  }
+
+  .nc-spinner svg {
+    inline-size: 100%;
+    block-size: 100%;
+    animation: nc-spin 0.8s linear infinite;
+  }
+
+  @keyframes nc-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Keep it moving (it signals progress) but much calmer. */
+  @media (prefers-reduced-motion: reduce) {
+    .nc-spinner svg {
+      animation-duration: 3s;
+    }
+  }
+}
