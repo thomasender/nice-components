@@ -29,7 +29,7 @@ jobs:
       - run: npm run storybook:build
         env:
           STORYBOOK_BASE: /nice-components/
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: storybook-static
       - id: deploy
